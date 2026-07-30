@@ -29,20 +29,36 @@
     <div class="kicker" style="color:var(--gold);">Contacto</div>
     <h2>¿En qué te puedo ayudar?</h2>
     <p>Un solo canal para MONCH, DANKAI, contaduría o eventos.</p>
-    <form class="contact-form">
-      <select>
-        <option>¿En qué te puedo ayudar?</option>
-        <option>Contaduría</option>
-        <option>Eventos</option>
-        <option>Restaurante MONCH</option>
-        <option>Postres DANKAI</option>
+    <form class="contact-form" id="contactForm">
+      <select id="motivo">
+        <option value="">¿En qué te puedo ayudar?</option>
+        <option value="Contaduría">Contaduría</option>
+        <option value="Eventos">Eventos</option>
+        <option value="Restaurante MONCH">Restaurante MONCH</option>
+        <option value="Postres DANKAI">Postres DANKAI</option>
       </select>
-      <input type="text" placeholder="Nombre">
-      <input type="text" placeholder="WhatsApp de contacto del negocio [pendiente]">
-      <button type="button" class="btn btn-primary">Enviar</button>
+      <input type="text" id="nombre" placeholder="Nombre">
+      <textarea id="mensaje" placeholder="Cuéntame brevemente qué necesitas" rows="3" style="padding:13px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.3); background:transparent; color:var(--white-text); font-family:'Inter', sans-serif; resize:vertical;"></textarea>
+      <button type="button" class="btn btn-primary" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
     </form>
+    <p style="margin-top:28px; font-size:0.85rem;">
+      También puedes escribir directo:
+      <a href="https://wa.me/573227121982" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline;">WhatsApp 322 712 1982</a>
+      ·
+      <a href="mailto:rafaelortiz2000@hotmail.com" style="color:var(--gold); text-decoration:underline;">rafaelortiz2000@hotmail.com</a>
+    </p>
   </div>
 </section>
+
+<script>
+function enviarWhatsApp(){
+  var motivo = document.getElementById('motivo').value || 'una consulta';
+  var nombre = document.getElementById('nombre').value || 'Sin nombre';
+  var mensaje = document.getElementById('mensaje').value || '';
+  var texto = 'Hola Rafael, soy ' + nombre + '. Te escribo por: ' + motivo + '. ' + mensaje;
+  window.open('https://wa.me/573227121982?text=' + encodeURIComponent(texto), '_blank');
+}
+</script>
 
 <footer>Wireframe de estructura — Rafael Ortiz Lozano</footer>
 
