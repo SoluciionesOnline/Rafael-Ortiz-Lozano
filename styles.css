@@ -61,7 +61,11 @@ nav ul li a:hover, nav ul li a.active{color:var(--green-accent);}
 .btn:active{transform:scale(0.95);}
 .btn-primary{background:var(--green-accent); color:#fff; border:1px solid var(--green-accent);}
 .btn-ghost{border:1px solid rgba(255,255,255,0.4); color:var(--white-text); background:transparent;}
-.hero .ph{margin-top:56px; height:220px; background:repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0 10px, rgba(255,255,255,0.02) 10px 20px); border-color:rgba(255,255,255,0.25); color:var(--white-soft);}
+.hero-top{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;}
+.hero-name{color:var(--white-text); font-size:clamp(2.4rem, 5vw, 3.8rem); line-height:1.05; margin:0;}
+.hero-tagline{color:var(--white-text); font-size:clamp(1.3rem, 2.6vw, 1.9rem); font-weight:600; line-height:1.2; max-width:420px; text-align:right; margin:0;}
+@media(max-width:720px){.hero-tagline{text-align:left; max-width:100%;}}
+.hero-photo{margin-top:56px; height:clamp(200px, 32vw, 420px); width:100%;}
 
 /* módulos de índice */
 .module-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:18px;}
@@ -104,14 +108,9 @@ section h2{font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom:14px; color:var
 /* GASTRONOMIA */
 .food-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
 @media(max-width:720px){.food-grid{grid-template-columns:1fr;}}
-.food-grid.with-legacy{grid-template-columns:1fr 1fr 0.8fr;}
-@media(max-width:900px){.food-grid.with-legacy{grid-template-columns:1fr 1fr;}}
-@media(max-width:720px){.food-grid.with-legacy{grid-template-columns:1fr;}}
-.food-card.legacy{opacity:0.88;}
-.food-card.legacy .ph{filter:grayscale(1);}
-.food-card.legacy .body{background:#d9d2c0; color:var(--ink-soft);}
-.food-card.legacy h3{color:#2a2a2a;}
-.legacy-badge{display:inline-block; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.08em; background:#4a423c; color:#fff; padding:3px 8px; border-radius:4px; margin-bottom:8px;}
+.food-grid.food-grid-3{grid-template-columns:1fr 1fr 1fr;}
+@media(max-width:900px){.food-grid.food-grid-3{grid-template-columns:1fr 1fr;}}
+@media(max-width:720px){.food-grid.food-grid-3{grid-template-columns:1fr;}}
 .food-card{border-radius:var(--radius); overflow:hidden; box-shadow:0 0 0.5px rgba(0,0,0,0.14), 0 1px 1px rgba(0,0,0,0.24);}
 .food-card .ph{height:200px; border-radius:0;}
 .food-card .body{padding:22px;}
@@ -119,11 +118,14 @@ section h2{font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom:14px; color:var
 .food-card.monch h3{font-family:'Inter', serif; font-style:italic; color:#e2503f;}
 .food-card.dankai .body{background:#eaf3f2; color:#3a2a20;}
 .food-card.dankai h3{color:#4a3628;}
+.food-card.cinco97 .body{background:#0d0d0d; color:#f5ede0;}
+.food-card.cinco97 h3{color:#f28c28;}
+.food-card.cinco97 .tag{color:#f28c28; opacity:0.9;}
 .food-card p{font-size:0.88rem; margin-top:6px; opacity:0.85;}
 .food-card .tag{font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.7;}
+.ig-link{display:inline-block; margin-top:12px; font-size:0.78rem; font-weight:600; text-decoration:underline; opacity:0.9;}
 .thumb-row{display:grid; grid-template-columns:repeat(auto-fill, minmax(60px, 1fr)); gap:6px; padding:0 22px 22px;}
 .thumb-row img{width:100%; height:64px; object-fit:cover; border-radius:6px; display:block;}
-.food-card.legacy .thumb-row img{filter:grayscale(1);}
 .logo-badge{width:44px; height:44px; border-radius:50%; object-fit:cover; margin-bottom:10px; display:block;}
 
 /* CONTADURIA */
@@ -155,7 +157,10 @@ section h2{font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom:14px; color:var
 .case-card h4{font-size:0.98rem; margin-bottom:4px; color:var(--ink);}
 .case-card p{font-size:0.85rem; color:var(--ink-soft);}
 .more-cases{margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+.more-cases.gallery-4{grid-template-columns:repeat(4, 1fr);}
+@media(max-width:820px){.more-cases.gallery-4{grid-template-columns:1fr 1fr;}}
 .more-cases .ph{height:100px;}
+.more-cases.gallery-4 .ph{height:180px;}
 
 /* CONTACTO */
 .contacto{background:var(--house); color:var(--white-text); text-align:center;}
